@@ -1,10 +1,11 @@
-$main-color: #e67925;
-$body-bg:#fafafa;
+$main-color: #cc0003;
+$body-bg:#777777;
 $shadow-color:#000;
 
 $light-muted:rgba(#fff,.75);
+$text-muted:#676767;
 
-$header-color: #fff;
+$header-color: #626262;
 $navbar-dark-color: $light-muted;
 $navbar-dark-hover-color: #fff;
 
@@ -45,3 +46,4 @@ $box-shadow-lg: 0 6.4px 14.4px 0 rgba($shadow-color,.132),0 1.2px 3.6px 0 rgba($
 $box-shadow-xl: 0 25.6px 57.6px 0 rgba($shadow-color,.22),0 4.8px 14.4px 0 rgba($shadow-color,.18);
 
 $card-avatar-size:6rem;
+$card-bg: #d1d1d1;
