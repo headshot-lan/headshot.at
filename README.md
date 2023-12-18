@@ -55,9 +55,9 @@ bin/console doctrine:schema:create
 bin/console doctrine:fixtures:load -n
 ```
 
-### Run KLMS
+### Run website
 Once all setup steps are done start the Symfony development server using
 ```
-bin/console server:start
+XDEBUG_MODE=debug symfony server:start --port=8002 --no-tls
 ```
 Open the printed URL in your browser and log in with a superuser credential 
