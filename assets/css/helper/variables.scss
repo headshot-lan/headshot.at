@@ -5,6 +5,8 @@ $shadow-color:#000;
 $light-muted:rgba(#fff,.75);
 $text-muted:#676767;
 
+$link-color: lighten($main-color, 20%);
+
 $header-color: #626262;
 $navbar-dark-color: $light-muted;
 $navbar-dark-hover-color: #fff;
