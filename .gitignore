@@ -52,6 +52,7 @@
 /.web-server-pid
 
 .env.local
+.env.prod
 /nbproject/
 .idea
 .php_cs.cache

@@ -1,0 +1,5 @@
+@import "variables";
+
+.sidebar .nav-item a {
+  color: lighten($main-color, 15%);
+}
