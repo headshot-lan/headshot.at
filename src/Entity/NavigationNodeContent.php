@@ -38,4 +38,9 @@ class NavigationNodeContent extends NavigationNode
     {
         return $this->content->getId();
     }
+
+    public function getTargetAlias(): ?string
+    {
+        return $this->content->getAlias();
+    }
 }
