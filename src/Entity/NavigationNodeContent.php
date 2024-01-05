@@ -36,6 +36,9 @@ class NavigationNodeContent extends NavigationNode
 
     public function getTargetId(): ?int
     {
+        if (is_null($this->content)) {
+            throw new \Exception('Content is null for ' . $this->getId() . ' ' . $this->getName());
+        }
         return $this->content->getId();
     }
 
