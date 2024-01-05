@@ -2,19 +2,7 @@
   <div class="container">
       <div class="card">
           <div class="card-body row justify-content-center">
-              <div><h4>Noch keine LAN besucht?<br>Was erwartet dich?</h4></div>
-              <div>
-                <ul class="lan-list">
-                  <li>Bring Your Own Computer</li>
-                  <li>Triff tolle Menschen, die gerne Computerspiele spielen</li>
-                  <li>Komm alleine, oder bring deine Freunde mit</li>
-                  <li>Hab keine Angst, jeder war irgendwann mal das erste Mal da</li>
-                  <li>Lerne neue Leute und Spiele kennen</li>
-                  <li>Zocke weit in die Nacht, oder geh pennen</li>
-                  <li>Genieß die besondere Atmosphäre</li>
-                  <li>Hab Spaß!</li>
-                </ul>
-              </div>
+           {{ settings.get('home.header_content_left')|raw }}
           </div>
       </div>
   </div>

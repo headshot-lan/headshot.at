@@ -33,6 +33,8 @@ class SettingService
         'site.about' => [self::TB_DESCRIPTION => 'Über uns, Homepage links unten', self::TB_TYPE => self::TB_TYPE_HTML],
         'site.organisation' => [self::TB_DESCRIPTION => 'Organisationsname / Vereinsname', self::TB_TYPE => self::TB_TYPE_STRING],
 
+        'home.header_content_left' => [self::TB_DESCRIPTION => 'Inhalt des linken Blocks (zb What is a LAN)', self::TB_TYPE => self::TB_TYPE_HTML],
+
         'sponsor.enabled' => [self::TB_DESCRIPTION => 'Sponsorenbanner einschalten', self::TB_TYPE => self::TB_TYPE_BOOL],
         'sponsor.banner.show' => [self::TB_DESCRIPTION => 'Sponsoren-Banner anzeigen', self::TB_TYPE => self::TB_TYPE_BOOL],
         'sponsor.banner.title' => [self::TB_DESCRIPTION => 'Titel des Sponsorenbanner', self::TB_TYPE => self::TB_TYPE_STRING],

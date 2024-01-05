@@ -4,8 +4,14 @@
   color: lighten($main-color, 15%);
 }
 
-.lan-list {
-  li {
-    list-style-type: square;
+ul.lan-list {
+  list-style-type: none;
+
+  li::before {content: "•"; color: red;
+    display: inline-block;
+    width: 1rem;
+    margin-left: -1rem;
+    font-size: 1.5rem;
+    line-height: 1rem;
   }
 }
