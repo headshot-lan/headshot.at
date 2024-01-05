@@ -3,3 +3,9 @@
 .sidebar .nav-item a {
   color: lighten($main-color, 15%);
 }
+
+.lan-list {
+  li {
+    list-style-type: square;
+  }
+}
