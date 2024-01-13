@@ -7,7 +7,9 @@
 ul.lan-list {
   list-style-type: none;
 
-  li::before {content: "•"; color: red;
+  li::before {
+    content: "•";
+    color: $main-color;
     display: inline-block;
     width: 1rem;
     margin-left: -1rem;
