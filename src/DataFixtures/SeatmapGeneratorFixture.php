@@ -10,8 +10,12 @@ use Doctrine\Persistence\ObjectManager;
 class HeadshotSeatmapFixture extends Fixture implements FixtureGroupInterface
 {
     // -------- Usage -------- //
+    // Generate Rows + Blocks automatically based on settings
+    // 
     // php bin/console doctrine:fixtures:load --group=seatmap --append
-    // seats table will be truncated and filled with new data
+    // 
+    // seats table will be truncated and filled with new data, but you
+    // can disable the line `$this->resetSeatTable($manager);` below
 
     // -------- Settings -------- //
     // 6 Tische 3 Sektoren
@@ -37,7 +41,6 @@ class HeadshotSeatmapFixture extends Fixture implements FixtureGroupInterface
     
     
     // -------- Seatmap Generator -------- //
-    
     const TYPE = 'seat';
     const FIXTURE_GROUPS = ['seatmap'];
     private $currentSector = 1;

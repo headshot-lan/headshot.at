@@ -18,12 +18,11 @@
 
 
 {% block main %}
-
     <div class="container">
         <div class="row">
         {% if settings.get('home.header_content_left', false) %}
             <div class="col">        
-        {% include 'site/components/what-is-a-lan.html.twig' %}
+        {% include 'site/components/header-content-left.html.twig' %}
             </div>
         {% endif %}
             <div class="col">        
