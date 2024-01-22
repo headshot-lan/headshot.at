@@ -77,12 +77,16 @@ class UserType extends AbstractType
             ->add('website', UrlType::class, [
                 'required' => false,
             ])
-            ->add('steamAccount', TextType::class, [
-                'label' => 'Steam Account',
+            ->add('discordAccount', TextType::class, [
+                'label' => 'Discord Account',
                 'required' => false,
             ])
             ->add('battlenetAccount', TextType::class, [
                 'label' => 'Battle.net Account',
+                'required' => false,
+                ])
+            ->add('steamAccount', TextType::class, [
+                'label' => 'Steam Account',
                 'required' => false,
             ])
             ->add('hardware', TextareaType::class, [
