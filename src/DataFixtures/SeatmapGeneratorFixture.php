@@ -7,7 +7,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class HeadshotSeatmapFixture extends Fixture implements FixtureGroupInterface
+class SeatmapGeneratorFixture extends Fixture implements FixtureGroupInterface
 {
     // -------- Usage -------- //
     // Generate Rows + Blocks automatically based on settings

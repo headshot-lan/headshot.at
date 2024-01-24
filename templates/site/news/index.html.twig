@@ -19,7 +19,7 @@
 
 {% block main %}
     <div class="container">
-        {% set user = app.user.user %}
+        {% set user = app.user is null ? {} : app.user.user %}
         {% if user is not empty and (user.discordaccount is empty or user.phone is empty) %}
         <div class="row">
             <div class="col">
