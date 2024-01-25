@@ -4,7 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="cache-control" content="no-cache"/>
-        {% block favicon %}<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />{% endblock %}
+        {% block favicon %}<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        {% endblock %}
+        {# <link rel="manifest" href="/site.webmanifest"> #}
         <title>{% block title %}{{ settings.get('site.title') }}{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
