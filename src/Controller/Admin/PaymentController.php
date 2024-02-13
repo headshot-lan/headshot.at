@@ -102,6 +102,12 @@ class PaymentController extends AbstractController
                 case 'unpay':
                     $this->gamerService->gamerUnPay($user);
                     break;
+                case 'pay_toastflat':
+                    $this->gamerService->gamerPayToastflat($user);
+                    break;
+                case 'unpay_toastflat':
+                    $this->gamerService->gamerUnPayToastflat($user);
+                    break;
                 case 'checkin':
                     $this->gamerService->gamerCheckIn($user);
                     break;

@@ -92,8 +92,26 @@
             </div>
             <div class="row align-items-center m-2">
                 <div class="col-8">
+                    {% if gamer.hasPaidToastflat() %}
+                        Toastflat bezahlt am {{ gamer.paidToastflat | date(dateformat) }}
+                    {% else %}
+                        <span class="text-muted">Keine Toastflat</span>
+                    {% endif %}
+                </div>
+                <div class="col-4 text-right">
+                    {% if gamer.hasRegistered() %}
+                        {% if gamer.hasPaidToastflat() %}
+                            {{ _self.confirm_button('Toast unbezahlt', href, csrf_token, "unpay_toastflat", true) }}
+                        {% else %}
+                            {{ _self.confirm_button('Toast bezahlt', href, csrf_token, "pay_toastflat") }}
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row align-items-center m-2">
+                <div class="col-8">
                     {% if gamer.hasCheckedIn() %}
-                        Bezahlt am {{ gamer.checkedIn | date(dateformat) }}
+                        Eingecheckt am {{ gamer.checkedIn | date(dateformat) }}
                     {% else %}
                         <span class="text-muted">Nicht eingechecked</span>
                     {% endif %}

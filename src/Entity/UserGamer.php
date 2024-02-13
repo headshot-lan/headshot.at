@@ -22,6 +22,9 @@ class UserGamer
     #[ORM\Column(type: 'datetime', nullable: true)]
     private ?DateTimeInterface $paid = null;
 
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private ?DateTimeInterface $paidToastflat = null;
+
     #[ORM\OneToMany(targetEntity: Seat::class, mappedBy: 'owner')]
     private Collection $seats;
 
@@ -126,5 +129,23 @@ class UserGamer
     public function hasCheckedIn(): bool
     {
         return $this->checkedIn !== null;
+    }
+
+
+    public function getPaidToastflat(): ?DateTimeInterface
+    {
+        return $this->paidToastflat;
+    }
+
+    public function setPaidToastflat(?DateTimeInterface $paidToastflat): self
+    {
+        $this->paidToastflat = $paidToastflat;
+
+        return $this;
+    }
+
+    public function hasPaidToastflat(): bool
+    {
+        return $this->paidToastflat !== null;
     }
 }

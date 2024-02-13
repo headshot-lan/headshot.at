@@ -60,6 +60,9 @@
                                 {% if v.status.hasPaid() %}
                                     <span class="badge badge-primary">Bezahlt</span>
                                 {% endif %}
+                                {% if v.status.hasPaidToastflat() %}
+                                    <span class="badge badge-primary">Toastflat</span>
+                                {% endif %}
                                 {% if v.status.hasCheckedIn() %}
                                     <span class="badge badge-info">Checked-In</span>
                                 {% endif %}

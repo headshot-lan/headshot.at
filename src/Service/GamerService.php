@@ -98,6 +98,7 @@ class GamerService
         $this->logger->info("Gamer {$user->getNickname()} got registration status cleared.");
         $gamer->setRegistered(null);
         $gamer->setPaid(null);
+        $gamer->setPaidToastflat(null);
         $gamer->setCheckedIn(null);
         $this->em->persist($gamer);
         $this->em->flush();
@@ -156,6 +157,39 @@ class GamerService
         $this->logger->info("Gamer {$user->getNickname()} got paid status cleared.");
         $gamer->setPaid(null);
         $gamer->setCheckedIn(null);
+        $this->em->persist($gamer);
+        $this->em->flush();
+    }
+
+    public function gamerPayToastflat(User $user): void
+    {
+        $gamer = $this->getOrCreateGamer($user);
+
+        if (!$gamer->hasRegistered()) {
+            throw new GamerLifecycleException($user, 'User not registered yet.');
+        }
+
+        if ($gamer->hasPaidToastflat()) {
+            throw new GamerLifecycleException($user, 'User already paid Toastflat.');
+        }
+
+        $this->logger->info("Gamer {$user->getNickname()} Toastflat got paid status set.");
+
+        $gamer->setPaidToastflat(new DateTime());
+        $this->em->persist($gamer);
+        $this->em->flush();
+    }
+
+    public function gamerUnPayToastflat(User $user): void
+    {
+        $gamer = $this->getOrCreateGamer($user);
+
+        if (!$gamer->hasPaidToastflat()) {
+            throw new GamerLifecycleException($user, 'User Toastflat not paid yet.');
+        }
+
+        $this->logger->info("Gamer {$user->getNickname()} Toastflat got paid status cleared.");
+        $gamer->setPaidToastflat(null);
         $this->em->persist($gamer);
         $this->em->flush();
     }
