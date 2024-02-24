@@ -74,6 +74,7 @@ public/cache
 public/media
 
 *.sh
+!deploy.sh
 
 ###> friendsofphp/php-cs-fixer ###
 /.php_cs
