@@ -2,7 +2,7 @@
     <div class="text-light-muted">
         {% set user = app.user.user %}
         {% if user is not empty %}
-            Dein Status:
+            <span class="is-not-mobile">Dein </span>Status:
             {% if user is not registered_gamer %}
                 <a href="{{ url('lan_signup') }}">Nicht Angemeldet</a>
             {% else %}

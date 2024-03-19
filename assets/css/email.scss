@@ -1,7 +1,9 @@
 $body-bg:#FFFFFF;
 @import 'klms';
-$body-bg:#FFFFFF;
 
+.body {
+  background-color: #EBEBEB I !important;
+}
 .container {
   max-width: map-get($container-max-widths, md) ;
 }
