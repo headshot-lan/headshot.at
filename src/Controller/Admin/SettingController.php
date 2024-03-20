@@ -2,14 +2,16 @@
 
 namespace App\Controller\Admin;
 
+
 use App\Form\HtmlTextareaType;
-use App\Service\SettingService;
 use App\Service\HelperService;
+use App\Service\SettingService;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\HttpFoundation\Request;
@@ -66,6 +68,9 @@ class SettingController extends AbstractController
             default:
             case SettingService::TB_TYPE_STRING:
                 $fb->add('text', TextType::class, ['required' => false, 'label' => false]);
+                break;
+            case SettingService::TB_TYPE_TEXTAREA:
+                $fb->add('text', TextareaType::class, ['required' => false, 'label' => false, 'attr' => ['rows' => 10]]);
                 break;
             case SettingService::TB_TYPE_HTML:
                 $fb->add('text', HtmlTextareaType::class, ['required' => false, 'label' => false]);

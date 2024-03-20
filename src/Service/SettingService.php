@@ -16,6 +16,7 @@ class SettingService
     private const TB_DEFAULT_VALUE = 'default';
     final public const TB_TYPE_STRING = 'string';
     final public const TB_TYPE_DATETIME = 'datetime-local';
+    final public const TB_TYPE_TEXTAREA = 'textarea';
     final public const TB_TYPE_HTML = 'html';
     final public const TB_TYPE_URL = 'url';
     final public const TB_TYPE_FILE = 'file';
@@ -54,6 +55,7 @@ class SettingService
         'lan.signup.info' => [self::TB_DESCRIPTION => 'Inhalt der beim "Anmelden" zu einer LAN angezeigt wird', self::TB_TYPE => self::TB_TYPE_HTML],
         'lan.party.start' => [self::TB_DESCRIPTION => 'Beginn der Lanparty', self::TB_TYPE => self::TB_TYPE_DATETIME],
         'lan.party.end' => [self::TB_DESCRIPTION => 'Ende der Lanparty', self::TB_TYPE => self::TB_TYPE_DATETIME],
+        'lan.checklist' => [self::TB_DESCRIPTION => 'Checklist Einträge. Zeilen Bindestrich davor werden als Überschrift ausgegeben.', self::TB_TYPE => self::TB_TYPE_TEXTAREA],
 
         'lan.seatmap.enabled' => [self::TB_DESCRIPTION => 'Sitzplanbuchungen einschalten', self::TB_TYPE => self::TB_TYPE_BOOL],
         'lan.seatmap.allow_booking_for_non_paid' => [self::TB_DESCRIPTION => 'Sitzplanbuchungen für nicht bezahlte Gamer erlauben', self::TB_TYPE => self::TB_TYPE_BOOL],
