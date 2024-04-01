@@ -30,6 +30,7 @@
                         <th class="w-25" data-data="user.firstname">Vorname</th>
                         <th class="w-25" data-data="user.surname">Nachname</th>
                         <th class="w-25" data-data="status.paid">Status</th>
+                        <th class="w-25" data-data="status.registered">Anmeldung</th>
                         <th
                                 class="text-nowrap w-1"
                                 data-orderable="false"
@@ -39,6 +40,7 @@
                         >
                             Aktionen
                         </th>
+                        
                     </tr>
                     </thead>
                     <tbody>
@@ -67,6 +69,10 @@
                                     <span class="badge badge-info">Checked-In</span>
                                 {% endif %}
                             </td>
+                            <td>
+                                {% if v.status.registered is not null %}
+                                    {{ v.status.registered|date('d.m.Y') }}
+                                {% endif %}
                             <td>
                                 <a class="btn btn-outline-dark text-nowrap" data-toggle="ajaxModal" href="{{ path('admin_payment_show', {'uuid' : v.user.uuid}) }}">
                                     <i class="fas fa-money-check"></i> Status ändern
