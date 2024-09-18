@@ -36,7 +36,7 @@ class SponsorFixtures extends Fixture implements DependentFixtureInterface
             $manager->persist($category);
         }
 
-        $src = __DIR__."/../../assets/images/logo.png";
+        $src = __DIR__ . "/../../assets/images/logo.png";
         $src1 = sys_get_temp_dir() . '/logo1.png';
         $src2 = sys_get_temp_dir() . '/logo2.png';
         $this->filesystem->copy($src, $src1);

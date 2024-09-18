@@ -52,8 +52,8 @@ class SeatmapService
 
         $ret = [];
         foreach ($seats as $seat) {
-            $ret[$seat->getId()] = $seat->getOwner() ?
-                $users[$seat->getOwner()->getUuid()->toString()] :
+            $ret[$seat->getId()] = isset($users[$seat->getOwner()?->getUuid()?->toString()]) ?
+                $users[$seat->getOwner()?->getUuid()?->toString()] :
                 null;
         }
 

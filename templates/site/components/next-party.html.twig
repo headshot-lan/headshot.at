@@ -1,7 +1,6 @@
 {% if settings.get("lan.party.start") %}
-<img class="card-img-top" src="https://headshot.at/media/image/lan-news-header-65d7b738977ec003053514.jpg">
+<img class="card-img-top" src="{{ asset("build/images/next-lan.png") }}">
 <div class="card-body row justify-content-center h3">
-    <span>Nächste Lanparty:</span> &nbsp;
     <span><span class="text-primary">{{helpers.toShortDate(settings.get("lan.party.start"), 'd.m.')}} {% if settings.get("lan.party.start") %} - {{helpers.toShortDate(settings.get("lan.party.end"), 'd.m.Y')}}{% endif %}</span> <!--<i style="font-size: 1.75rem;" class="fas fa-calendar fa-fw"></i>--></span>
 </div>
 {% endif %}

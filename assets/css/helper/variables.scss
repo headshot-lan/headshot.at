@@ -1,11 +1,14 @@
-$main-color: #cc0003;
+$main-color: #0088ff; // blue
+// $main-color: #00b626; // green
 $body-bg:#8e8e8e; // #777777;
 $shadow-color:#000;
 
 $light-muted:rgba(#fff,.75);
 $text-muted:#676767;
 
-$link-color: lighten($main-color, 20%);
+// $link-color: lighten($main-color, 20%);
+$link-color: $main-color;
+$link-hover-color: lighten($main-color, 10%);
 
 $header-color: #626262;
 $navbar-dark-color: $light-muted;
