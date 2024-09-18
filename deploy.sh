@@ -7,7 +7,7 @@ set +e
 BASE_DIR=`dirname $0`
 
 # echo "Build prod assets"
-npm run build
+# npm run build
 
 echo "Push data"
 rsync -avzh --exclude-from=".deployignore" --delete * -e "ssh -p 822" headshot_ftp@neu.headshot.at:/neu.headshot.at/

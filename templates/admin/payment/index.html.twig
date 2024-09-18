@@ -71,7 +71,7 @@
                             </td>
                             <td>
                                 {% if v.status.registered is not null %}
-                                    {{ v.status.registered|date('d.m.Y') }}
+                                    {{ v.status.registered|date('Y-m-d') }}
                                 {% endif %}
                             <td>
                                 <a class="btn btn-outline-dark text-nowrap" data-toggle="ajaxModal" href="{{ path('admin_payment_show', {'uuid' : v.user.uuid}) }}">

@@ -61,3 +61,8 @@ Once all setup steps are done start the Symfony development server using
 XDEBUG_MODE=debug symfony server:start --port=8002 --no-tls
 ```
 Open the printed URL in your browser and log in with a superuser credential 
+
+
+## Hidden Features
+
+seatmap print view: /seatmap?print=1  .. then zoom in, take a screenshot and it gets printed in full paper size
