@@ -3,10 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
+use App\Entity\UserGamer;
 use App\Exception\GamerLifecycleException;
 use App\Form\UserSelectType;
 use App\Idm\IdmManager;
 use App\Idm\IdmRepository;
+use App\Service\DogtagService;
 use App\Service\GamerService;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,12 +24,15 @@ class PaymentController extends AbstractController
     private const CSRF_TOKEN_PAYMENT = 'paymentToken';
 
     private readonly GamerService $gamerService;
+    private readonly DogtagService $dogtagService;
     private readonly IdmRepository $userRepo;
 
     public function __construct(GamerService $gamerService,
+                                DogtagService $dogtagService,
                                 IdmManager $manager)
     {
         $this->gamerService = $gamerService;
+        $this->dogtagService = $dogtagService;
         $this->userRepo = $manager->getRepository(User::class);
     }
 
@@ -40,9 +45,32 @@ class PaymentController extends AbstractController
     }
 
     #[Route(path: '', name: '', methods: ['GET'])]
-    public function index(): Response
+    public function index(Request $request): Response
     {
         $gamers = $this->gamerService->getGamers();
+        $printDogTags = intval($request->query->get('dogtags')) === 1;
+        if ($printDogTags) {
+            $dogtagGamers = array_map(fn ($g) => [
+              'id' => $g['user']->getId(),
+              'uuid' => $g['user']->getUuid()->toString(),
+              'nickname' => $g['user']->getNickname(),
+              'paid' => $g['status']->hasPaid(),
+            ], $gamers);
+
+            return $this->render('admin/payment/dogtags.html.twig', [
+                'gamers' => $dogtagGamers,
+            ]);
+        }
+
+        $generatePngs = intval($request->query->get('png')) === 1;
+        if ($generatePngs) {
+          $options = [
+            'lan' => '1. KaiserLAN',
+            'date' => '25.10.-27.10.2024',
+          ];
+          $ids = $request->query->get('ids') ?? [];
+          return $this->dogtagService->generateDogTagMatrix($options, $ids);
+        }
 
         return $this->render('admin/payment/index.html.twig', [
             'gamers' => $gamers,

@@ -1,6 +1,8 @@
 doctrine:
     dbal:
         url: '%env(resolve:DATABASE_URL)%'
+        # url: 'mysql://app:app@database:3323/kaiser01?serverVersion=10.6.16-MariaDB-1:10.6.16+maria~ubu2004&charset=utf8'
+        # prod url: mysql://headshot:rvy3tyg3bfm9bpc*HNW@127.0.0.1:3306/headshot_plesk_kaiser01?serverVersion=10.3.39-MariaDB-1:10.3.39+maria~ubu2004&charset=utf8
         types:
             uuid: Ramsey\Uuid\Doctrine\UuidType
 

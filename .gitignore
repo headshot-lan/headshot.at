@@ -50,9 +50,8 @@
 
 # Embedded web-server pid file
 /.web-server-pid
-
-.env.local
-_.env.prod
+.env*
+!.env.example
 /nbproject/
 .idea
 .php_cs.cache
